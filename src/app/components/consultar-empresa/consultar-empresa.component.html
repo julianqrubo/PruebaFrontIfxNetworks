@@ -1,0 +1,15 @@
+<h1>Lista de empresas</h1>
+<br>
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action" *ngFor="let item of empresas">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" style="font-weight: bold;">{{ item.name }}</h5>
+            <small>ID: {{ item.id }}</small>
+        </div>
+        <p class="mb-1">Nit: {{ item.nit }}</p>
+    </a>
+    <div class="col-sm-10">
+        <br>
+        <a [routerLink]="['/home']" class="btn btn-outline">Regresar</a>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<h1>Registrar empresa</h1>
+<br>
+<form>
+    <div class="form-group row">
+        <label for="nit" class="col-sm-2 col-form-label">Nit*:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="nit" #nit maxlength="15" required="true" pattern="^\d*$">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Nombre*:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" #name maxlength="100" required="true">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button (click)="guardarEmpresa(nit.value, name.value)" class="btn btn-primary">Guardar</button>
+            <a [routerLink]="['/home']" class="btn btn-outline-danger">Regresar</a>
+        </div>
+    </div>
+</form>

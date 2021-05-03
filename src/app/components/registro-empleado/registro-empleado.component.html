@@ -1,0 +1,40 @@
+<h1>Registrar empleado</h1>
+<br>
+<form>
+    <div class="form-group row">
+        <label for="document" class="col-sm-2 col-form-label">Documento*:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="document" #document maxlength="15" required="true" pattern="^\d*$">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Nombre*:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" #name maxlength="100" required="true">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" #email placeholder="nombre@dominio.com" maxlength="50" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Teléfono:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="phone" #phone maxlength="10" pattern="^\d*$">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="company" class="col-sm-2 col-form-label">Empresa*:</label>
+        <select class="form-control" id="company" #company required="true">
+          <option *ngFor="let item of empresas">{{ item.id + ':' + item.name }}</option>
+        </select>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button (click)="guardarEmpleado(document.value, name.value, email.value, phone.value, company.value)" class="btn btn-primary">Guardar</button>
+            <a [routerLink]="['/home']" class="btn btn-outline-danger">Regresar</a>
+        </div>
+    </div>
+</form>

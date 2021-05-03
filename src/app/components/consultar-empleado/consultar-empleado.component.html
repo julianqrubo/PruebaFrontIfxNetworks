@@ -1,0 +1,17 @@
+<h1>Lista de empleados</h1>
+<br>
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action" *ngFor="let item of empleados">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" style="font-weight: bold;">{{ item.name }}</h5>
+            <small>ID: {{ item.id }}</small>
+        </div>
+        <p class="mb-1">Documento: {{ item.document }}</p>
+        <p class="mb-1">Email: {{ item.email }}</p>
+        <p class="mb-1">Teléfono: {{ item.phone }}</p>
+    </a>
+    <div class="col-sm-10">
+        <br>
+        <a [routerLink]="['/home']" class="btn btn-outline">Regresar</a>
+    </div>
+</div>
